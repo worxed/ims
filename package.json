@@ -3,9 +3,10 @@
     "version": "1.0.0",
     "description": "Inventory Management System",
     "main": "server/app.js",
+    "type": "module",
     "scripts": {
         "start": "node server/app.js",
-        "client": "npm start --prefix client",
+        "client": "node client/app.js",
         "dev": "concurrently \"npm run start\" \"npm run client\"",
         "test": "mocha server/tests/server.test.js"
     },
@@ -23,6 +24,7 @@
         "express": "^4.19.2",
         "glob": "^11.0.0",
         "mongodb": "^4.3.0",
+        "node-fetch": "^3.3.2",
         "supertest": "^7.0.0"
     },
     "devDependencies": {
