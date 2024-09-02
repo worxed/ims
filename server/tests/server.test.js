@@ -1,10 +1,13 @@
+// import { expect } from 'chai';
+const chai = require('chai');
+const expect = chai.expect;
+
 const request = require('supertest');
-const app = require('../server/app');
 
 describe('GET /', () => {
-it('should return "Hello World!"', async () => {
-    const response = await request(app).get('/');
-    expect(response.status).toBe(200);
-    expect(response.text).toBe('Hello World!');
-});
+    it('should return "it works."', async () => {
+        const response = await request('http://localhost:3000').get('/');
+        expect(response.status).to.equal(200);
+        expect(response.text).to.equal('it works.');
+    });
 });
